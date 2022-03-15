@@ -1,0 +1,104 @@
+.title {
+  background-color: #7c602c;
+  color: #d9b73e;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  margin: 4px;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  position: absolute;
+  width: 4rem;
+  z-index: 1;
+  right: 10vw;
+  top: 5vh;
+}
+.circle {
+  background-color: #7c602c;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.75rem;
+  margin: 4px;
+  padding-top: 0.5rem;
+}
+
+.map-wrapper {
+  box-sizing: border-box;
+  margin: auto;
+  width: 81vw;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.progress-bar {
+  width: 80%;
+  margin: auto;
+  margin-top: 1.5rem;
+}
+
+.dialog-container {
+  width: 65vw;
+  height: 60vh;
+  /* border: solid black; */
+  margin: auto;
+  padding: 0;
+  position: relative;
+  display: block;
+}
+
+.answered {
+  background-color: #fcf7e3;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.question {
+  margin: auto;
+  margin-top: 1rem;
+  background-color: #fcf7e3;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 50vw;
+  height: 30vh;
+  position: absolute;
+}
+
+.dotted-underline {
+  margin: auto;
+  width: 80%;
+  padding-bottom: 0.25rem;
+  border-bottom: 0.25rem dotted;
+}
+
+.right-point {
+  width: 0;
+  height: 0;
+  border-left: 2vh solid transparent;
+  border-right: 2vh solid transparent;
+  border-top: 10vh solid #fcf7e3;
+  position: absolute;
+  bottom: -5vh;
+  right: 0%;
+  transform: rotate(-30deg);
+  @media screen and (max-width: 900px) {
+    transform: rotate(0deg);
+    right: 10%;
+    bottom: -3vh;
+  }
+}
+
+.isabelle {
+  position: absolute;
+  right: -25vw;
+  z-index: -1;
+  bottom: -40vh;
+  height: 60vh;
+  @media screen and (max-width: 900px) {
+    height: 40vh;
+    bottom: -30vh;
+  }
+}

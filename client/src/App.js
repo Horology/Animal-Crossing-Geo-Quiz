@@ -1,14 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route } from 'react-router-dom';
+import Main from './pages/Main';
+import LandingPage from './pages/LandingPage';
+
+
+const PageRouting = () => {
+  return(
+    <Routes>
+      <Route path = '/landing' element = {<LandingPage />} />
+      <Route path = '/*' element = {<Main />} />
+    </Routes>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-      </header>git init
-  
-    </div>
+    <PageRouting />
   );
 }
 

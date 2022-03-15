@@ -1,0 +1,14 @@
+@import "_map.scss";
+@import "_landing.scss";
+@import "_globals.scss";
+
+body {
+  margin: 0;
+  font-family: "FinkHeavy", Audiowide, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #7f1a1e;
+  background-color: #ffd369;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
