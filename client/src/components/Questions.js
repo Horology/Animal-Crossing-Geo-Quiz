@@ -25,7 +25,7 @@ const Questions = () => {
           
         </>
         }
-        <div class="right-point"></div>
+        <div className="right-point"></div>
         <img className = 'isabelle' src = {Isabelle} />
         </div>}
       </div>

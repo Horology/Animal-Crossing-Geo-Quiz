@@ -12,7 +12,7 @@ const DefaultIcon = () =>{
 }
 
 function MapWrapper() {
-  const {cities, setLoading, villagers, setVillagers, setCurrentIndex, progress, setProgress} = usePrimeContext()
+  const {cities, setLoading, villagers, setCurrentIndex, progress, setProgress} = usePrimeContext()
 
   useEffect(() => {
     if(cities.length >=9){
@@ -50,7 +50,7 @@ function MapWrapper() {
       {(cities.length >= 9 ) && cities.map((city, index) =>{
         const latlng = [parseFloat(city.latitude), parseFloat(city.longitude)]
         return(
-          <Marker position={latlng} eventHandlers = {{ click: (e) => {onMarkerClick(e,index)}}}
+          <Marker key = {index} position={latlng} eventHandlers = {{ click: (e) => {onMarkerClick(e,index)}}}
           icon = {villagers[index].show?Icon(villagers[index]): DefaultIcon()} >
             <Popup>
               {villagers[index].phrase}
@@ -58,7 +58,7 @@ function MapWrapper() {
           </Marker>
         )
       })}
-    
+
     </MapContainer>
   ) 
 }

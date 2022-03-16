@@ -6,11 +6,14 @@ const Navbar = () => {
     <>
       <h1 className = 'title'>
         <ImCross size={45}/>
-        Animal Crossing: Find the Villagers!
+        <div className = 'title-text'>
+          Animal Crossing: Find the Villagers!
+          <img className = 'logo' src={leaf}/>
+        </div>
         <ImCross size={45}/></h1>
         <div className = 'underline-circle'>
       </div>
-      <img className = 'logo' src={leaf}/>
+
     </>
   )
 }

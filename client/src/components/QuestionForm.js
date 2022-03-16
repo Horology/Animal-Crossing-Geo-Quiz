@@ -26,7 +26,7 @@ const QuestionForm = ({answer}) => {
         <input type="text" className="answer" 
         value = {currentInput} 
         onChange = {(e)=>{e.preventDefault();setCurrentInput(e.target.value)}}/>
-        <button onClick = {(e)=>handleClick(e)}> Submit</button>
+        <button className = 'submit-button'onClick = {(e)=>handleClick(e)}> Submit</button>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import ProgressBar from '../components/ProgressBar';
 import MapWrapper from '../components/MapWrapper';
 import Navbar from '../components/Navbar';
 import '../dist/index.css';
+import background from '../assets/background.png';
 import { usePrimeContext } from '../context/context';
 
 
@@ -29,6 +30,7 @@ const Main = () => {
         <div className = 'map-wrapper'>
         <MapWrapper />
         <ProgressBar />
+        <div className = 'background'><img src = {background} /></div>
         <Questions />
         </div>
 

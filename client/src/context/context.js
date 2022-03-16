@@ -14,7 +14,7 @@ export const ContextProvider = ({children}) =>{
     const [cities, setCities] = useState([])
     const [currentIndex, setCurrentIndex] = useState(0)
     const [progress, setProgress] = useState(0)
-    const [correct, setCorrect] = useState(0)
+    const [correct, setCorrect] = useState(10)
 
     useEffect(() =>{
         getCountries()

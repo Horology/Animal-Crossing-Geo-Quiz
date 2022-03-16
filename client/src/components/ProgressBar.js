@@ -14,7 +14,7 @@ const ProgressBar = () => {
   return (
     <div className = 'progress-bar'>
       {correct >= progress?
-      <h2>Congratulations you won!</h2>
+      <h2 className = 'congratz'>Congratulations you won!</h2>
       :[...Array(progress)].map((x, i) =>{
         return (
           <>

@@ -10,12 +10,15 @@
   justify-content: space-between;
 }
 
+.title-text {
+  position: relative;
+}
 .logo {
   position: absolute;
   width: 4rem;
   z-index: 1;
-  right: 10vw;
-  top: 5vh;
+  right: -4vw;
+  top: 1vh;
 }
 .circle {
   background-color: #7c602c;
@@ -63,8 +66,9 @@
   border-radius: 1rem;
   padding: 1rem;
   width: 50vw;
-  height: 30vh;
+  min-height: 30vh;
   position: absolute;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dotted-underline {
@@ -89,6 +93,11 @@
     right: 10%;
     bottom: -3vh;
   }
+  @media screen and (max-width: 700px) {
+    transform: rotate(0deg);
+    right: 10%;
+    bottom: -10vh;
+  }
 }
 
 .isabelle {
@@ -100,5 +109,63 @@
   @media screen and (max-width: 900px) {
     height: 40vh;
     bottom: -30vh;
+  }
+}
+
+@mixin animal-crossing-box {
+  appearance: none;
+  border: 0;
+  outline: none;
+  font-family: inherit;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 1.25rem;
+  padding: 8px;
+  border-radius: 23px;
+  cursor: pointer;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.answer {
+  @include animal-crossing-box;
+  padding-right: 0rem;
+  color: #8d7c72;
+  background-color: #daece5;
+}
+
+.submit-button {
+  @include animal-crossing-box;
+  color: white;
+  margin-left: 2rem;
+  background-color: #928f81;
+
+  @media screen and (max-width: 700px) {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+}
+
+.congratz {
+  @include animal-crossing-box;
+  background-color: #928f81;
+  color: yellow;
+}
+
+.background {
+  position: absolute;
+  width: 75vw;
+  overflow: hidden;
+  height: 65%;
+  margin: none;
+  img {
+    position: absolute;
+    top: 20em;
+    left: 0;
+    width: 70em;
+    z-index: -1;
   }
 }
