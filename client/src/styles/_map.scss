@@ -142,6 +142,17 @@
   color: white;
   margin-left: 2rem;
   background-color: #928f81;
+  &:hover {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #00d2c2,
+      #00d2c2 15px,
+      #00b6a9 0,
+      #00b6a9 30px
+    );
+    background-size: 200% 200%;
+    animation: barberpole 3s linear infinite;
+  }
 
   @media screen and (max-width: 700px) {
     margin-bottom: 2rem;
@@ -167,5 +178,14 @@
     left: 0;
     width: 70em;
     z-index: -1;
+  }
+}
+
+@keyframes barberpole {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
