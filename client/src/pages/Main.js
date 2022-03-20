@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import {Redirect} from 'react-router-dom';
 import '../App.css';
 import ProgressBar from '../components/ProgressBar';
 import MapWrapper from '../components/MapWrapper';
@@ -16,9 +17,14 @@ const Main = () => {
 
 
   if(loading | villagers.length <=9){
+
     return(
       <div className="loading">
-        Loading
+        <h1>Loading</h1>
+        <button className = 'submit-button loading' 
+        onClick={() => window.location.reload(false)}>
+          Please click to refresh if the page isn't loading!
+          </button>
       </div>
     )
   }

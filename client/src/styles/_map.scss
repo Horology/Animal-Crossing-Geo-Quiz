@@ -29,6 +29,13 @@
   padding-top: 0.5rem;
 }
 
+.loading {
+  margin: auto;
+  margin-top: 10rem;
+  text-align: center;
+  width: 50%;
+  color: white;
+}
 .map-wrapper {
   box-sizing: border-box;
   margin: auto;
@@ -59,7 +66,8 @@
   padding: 2rem;
   border-radius: 1rem;
 }
-.question {
+
+@mixin container {
   margin: auto;
   margin-top: 1rem;
   background-color: #fcf7e3;
@@ -69,6 +77,9 @@
   min-height: 30vh;
   position: absolute;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+}
+.question {
+  @include container;
 }
 
 .dotted-underline {
@@ -137,11 +148,7 @@
   background-color: #daece5;
 }
 
-.submit-button {
-  @include animal-crossing-box;
-  color: white;
-  margin-left: 2rem;
-  background-color: #928f81;
+@mixin animal-crossing-effect {
   &:hover {
     background-image: repeating-linear-gradient(
       -45deg,
@@ -153,6 +160,14 @@
     background-size: 200% 200%;
     animation: barberpole 3s linear infinite;
   }
+}
+
+.submit-button {
+  @include animal-crossing-box;
+  color: white;
+  margin-left: 2rem;
+  background-color: #928f81;
+  @include animal-crossing-effect;
 
   @media screen and (max-width: 700px) {
     margin-bottom: 2rem;

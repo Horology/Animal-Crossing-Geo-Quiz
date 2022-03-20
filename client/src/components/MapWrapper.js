@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import L from 'leaflet'; 
 import { MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 
@@ -12,7 +12,7 @@ const DefaultIcon = () =>{
 }
 
 function MapWrapper() {
-  const {cities, setLoading, villagers, setCurrentIndex, progress, setProgress} = usePrimeContext()
+  const {cities, loading, setLoading, villagers, setCurrentIndex, progress, setProgress} = usePrimeContext()
 
   useEffect(() => {
     if(cities.length >=9){
@@ -32,6 +32,14 @@ function MapWrapper() {
 
   const onMarkerClick = (e,index) => {
     setCurrentIndex(index)
+  }
+
+  if(loading){
+    return(
+      <h1 className="loading">
+      Loading
+      </h1>
+    )
   }
 
 

@@ -21,7 +21,7 @@ export const ContextProvider = ({children}) =>{
         getVillagers()  
     }, [])
 
-    const getVillagers = async () =>{
+    const getVillagers =() =>{
         const villagerImage = () =>{
             let rand = Math.floor(Math.random()*391)
             axios.get(`${villager_id_url}${rand}`).then(res => {
@@ -37,8 +37,10 @@ export const ContextProvider = ({children}) =>{
         for(let i = 0; i<10; i++){
             villagerImage()
         }
-        
-        
+        // if(villagers.length < 10){
+        //     getVillagers()  
+        //     console.log('getting')
+        // }
     }
 
     const getCountries = async () =>{
@@ -71,6 +73,10 @@ export const ContextProvider = ({children}) =>{
             }
         }).catch(err => {
             console.log(err)
+            setCities([])
+            console.log('resetting cities')
+            getCountries()
+
         })
     }
 
