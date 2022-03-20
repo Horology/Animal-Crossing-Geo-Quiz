@@ -31,8 +31,8 @@ export const ContextProvider = ({children}) =>{
                         const dated_modded = {...res.data[0], show: false}
                         setVillagers(prev => [...prev, dated_modded])
                     }
-                ).catch(err => console.log(err))
-            }).catch(err => console.log(err))
+                ).catch(err => console.log('acnh error'))
+            }).catch(err => console.log('acnh error'))
         }
         for(let i = 0; i<10; i++){
             villagerImage()
@@ -59,7 +59,7 @@ export const ContextProvider = ({children}) =>{
             setLoading(false)
           }).catch(
             err =>
-              console.log(err, ' error')
+              console.log('country api error')
         )
     }
 
