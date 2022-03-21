@@ -17,6 +17,7 @@ export const ContextProvider = ({children}) =>{
         setLoading(true);
         getCountries();
         getVillagers(); 
+        setLoading(false);
 
     }, [])
 
@@ -44,7 +45,6 @@ export const ContextProvider = ({children}) =>{
                 let rand = Math.floor(Math.random()*data.length)
                 getLatlng(data[rand].city_ascii)
             }
-            setLoading(false)
           }).catch(
             err =>
               console.log('country api error')
