@@ -12,7 +12,7 @@ const PageRouting = () => {
     if(loading){
       navigate('/landing');
     }
-  })
+  },[])
   return(
     <Routes>
       <Route path = '/landing' element = {<LandingPage />} />

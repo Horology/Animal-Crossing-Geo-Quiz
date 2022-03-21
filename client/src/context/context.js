@@ -1,9 +1,6 @@
 import React, {useEffect, useContext, useState} from 'react';
 import axios from 'axios';
-const ACNH_url = `https://api.nookipedia.com/villagers?api_key=${process.env.REACT_APP_ACNH_API_KEY}&name=`; 
 const country_url = "https://api.api-ninjas.com/v1/geocoding?city="; 
-const villager_id_url = 'http://acnhapi.com/v1/villagers/';
-
 const json = '/worldcities.json'
 
 const Context = React.createContext()
@@ -17,34 +14,25 @@ export const ContextProvider = ({children}) =>{
     const [correct, setCorrect] = useState(0)
 
     useEffect(() =>{
-        getCountries()
-        getVillagers()  
+        setLoading(true);
+        getCountries();
+        getVillagers(); 
+
     }, [])
 
     const getVillagers =() =>{
-        const villagerImage = () =>{
-            let rand = Math.floor(Math.random()*391)
-            axios.get(`${villager_id_url}${rand}`).then(res => {
-                const name = res.data.name["name-USen"]
-                axios.get(`${ACNH_url}${name}`).then(
-                    res => {
-                        const dated_modded = {...res.data[0], show: false}
-                        setVillagers(prev => [...prev, dated_modded])
-                    }
-                ).catch(err => console.log('acnh error'))
-            }).catch(err => console.log('acnh error'))
-        }
+        const villagerImage = () =>{axios.get(`http://localhost:5000/villagers`)
+        .then(res => {
+            const dated_modded = {...res.data[0], show: false}
+            setVillagers(prev => [...prev, dated_modded])})
+        .catch(err => console.log('acnmhapi acnh error'))}
         for(let i = 0; i<10; i++){
             villagerImage()
         }
-        // if(villagers.length < 10){
-        //     getVillagers()  
-        //     console.log('getting')
-        // }
+
     }
 
-    const getCountries = async () =>{
-        setLoading(true)
+    const getCountries = () =>{
         if(cities.length >= 10){
             return
         }
@@ -71,6 +59,7 @@ export const ContextProvider = ({children}) =>{
                 const data = {name,latitude,longitude}
                 setCities(prev => [...prev, data])
             }
+
         }).catch(err => {
             console.log(err)
             setCities([])

@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import plane from '../assets/plane.png';
 import  sky from '../assets/sky_with_clouds.mp4';
 import  icon from '../assets/isabelle-icon.png';
+import { usePrimeContext } from '../context/context';
 
 const LandingPage = () => {
+  const {loading, villagers} = usePrimeContext(); 
   return (
     <div className = 'landing-wrapper'>
       <video className = 'video' src = {sky} autoPlay loop muted type = 'video/mp4'/>
@@ -16,11 +18,12 @@ const LandingPage = () => {
         on a personal level. Given a prompt, you will be asked to guess who they are. Get all 
         of them right to bring them back to your island!
       </p>
-      <Link to = '/' ><button className="next-button"> Click to Continue</button></Link>
+      {loading?<button className="next-button"> Loading</button> :<Link to = '/' ><button className="next-button"> Click to Continue</button></Link>}
       <div className = 'isabelle-container'> 
         <img className = 'isabelle-icon' src = {icon}/>
         <div className = 'container-cursor'></div>
       </div>
+      
     </div>
   )
 }
