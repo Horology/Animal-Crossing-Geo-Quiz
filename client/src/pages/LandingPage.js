@@ -6,7 +6,7 @@ import  icon from '../assets/isabelle-icon.png';
 import { usePrimeContext } from '../context/context';
 
 const LandingPage = () => {
-  const {loading, villagers} = usePrimeContext(); 
+  const {loading} = usePrimeContext(); 
   return (
     <div className = 'landing-wrapper'>
       <video className = 'video' src = {sky} autoPlay loop muted type = 'video/mp4'/>

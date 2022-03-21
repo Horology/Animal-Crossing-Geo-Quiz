@@ -13,7 +13,3 @@ export const getVillagers = async (req, res) => {
     res.json(villager.data)
 
 };
-
-export const getCountries = async (req, res) => {
-
-};

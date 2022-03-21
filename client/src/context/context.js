@@ -21,7 +21,7 @@ export const ContextProvider = ({children}) =>{
     }, [])
 
     const getVillagers =() =>{
-        const villagerImage = () =>{axios.get(`http://localhost:5000/villagers`)
+        const villagerImage = () =>{axios.get(`https://animalcrossingserver.herokuapp.com/villagers`)
         .then(res => {
             const dated_modded = {...res.data[0], show: false}
             setVillagers(prev => [...prev, dated_modded])})
